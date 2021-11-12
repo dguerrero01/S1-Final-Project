@@ -11,6 +11,7 @@
 		3F223623273ADFC20076352B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223622273ADFC20076352B /* ContentView.swift */; };
 		3F223625273ADFC90076352B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F223624273ADFC90076352B /* Assets.xcassets */; };
 		3F223628273ADFC90076352B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F223627273ADFC90076352B /* Preview Assets.xcassets */; };
+		3F223632273CA36B0076352B /* LevelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223631273CA36A0076352B /* LevelSelect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3F223624273ADFC90076352B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F223627273ADFC90076352B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F223629273ADFC90076352B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F223631273CA36A0076352B /* LevelSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				3F223620273ADFC20076352B /* Final_ProjectApp.swift */,
 				3F223622273ADFC20076352B /* ContentView.swift */,
+				3F223631273CA36A0076352B /* LevelSelect.swift */,
 				3F223624273ADFC90076352B /* Assets.xcassets */,
 				3F223629273ADFC90076352B /* Info.plist */,
 				3F223626273ADFC90076352B /* Preview Content */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F223632273CA36B0076352B /* LevelSelect.swift in Sources */,
 				3F223623273ADFC20076352B /* ContentView.swift in Sources */,
 				3F223621273ADFC20076352B /* Final_ProjectApp.swift in Sources */,
 			);
