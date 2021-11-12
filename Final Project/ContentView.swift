@@ -16,7 +16,7 @@ struct ContentView: View {
                     .font(.title)
                     .fontWeight(.heavy)
                     .padding()
-                LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 8), count: 3), spacing: 8, content: {
+                LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: 8), count: 3), spacing: 10, content: {
                     ForEach(0..<9) { index in
                         Color.white
                             .frame(width: 100, height: 50)
@@ -26,7 +26,7 @@ struct ContentView: View {
                 NavigationLink("PLAY", destination: LevelSelect())
                     .padding()
                 Spacer()
-                .preferredColorScheme(.dark)
+                    .preferredColorScheme(.dark)
             }
         }
     }

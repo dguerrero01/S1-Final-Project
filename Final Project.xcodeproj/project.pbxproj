@@ -12,6 +12,12 @@
 		3F223625273ADFC90076352B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F223624273ADFC90076352B /* Assets.xcassets */; };
 		3F223628273ADFC90076352B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F223627273ADFC90076352B /* Preview Assets.xcassets */; };
 		3F223632273CA36B0076352B /* LevelSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223631273CA36A0076352B /* LevelSelect.swift */; };
+		3F223634273E12250076352B /* Level_01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223633273E12240076352B /* Level_01.swift */; };
+		3F223636273E12420076352B /* Level_02.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223635273E12420076352B /* Level_02.swift */; };
+		3F223638273E12510076352B /* Level_03.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223637273E12510076352B /* Level_03.swift */; };
+		3F22363A273E126E0076352B /* Level_04.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F223639273E126E0076352B /* Level_04.swift */; };
+		3F22363C273E12800076352B /* Level_05.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22363B273E12800076352B /* Level_05.swift */; };
+		3F22363E273E128D0076352B /* Level_06.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22363D273E128D0076352B /* Level_06.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		3F223627273ADFC90076352B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F223629273ADFC90076352B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F223631273CA36A0076352B /* LevelSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelect.swift; sourceTree = "<group>"; };
+		3F223633273E12240076352B /* Level_01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_01.swift; sourceTree = "<group>"; };
+		3F223635273E12420076352B /* Level_02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_02.swift; sourceTree = "<group>"; };
+		3F223637273E12510076352B /* Level_03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_03.swift; sourceTree = "<group>"; };
+		3F223639273E126E0076352B /* Level_04.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_04.swift; sourceTree = "<group>"; };
+		3F22363B273E12800076352B /* Level_05.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_05.swift; sourceTree = "<group>"; };
+		3F22363D273E128D0076352B /* Level_06.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level_06.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +69,12 @@
 				3F223620273ADFC20076352B /* Final_ProjectApp.swift */,
 				3F223622273ADFC20076352B /* ContentView.swift */,
 				3F223631273CA36A0076352B /* LevelSelect.swift */,
+				3F223633273E12240076352B /* Level_01.swift */,
+				3F223635273E12420076352B /* Level_02.swift */,
+				3F223637273E12510076352B /* Level_03.swift */,
+				3F223639273E126E0076352B /* Level_04.swift */,
+				3F22363B273E12800076352B /* Level_05.swift */,
+				3F22363D273E128D0076352B /* Level_06.swift */,
 				3F223624273ADFC90076352B /* Assets.xcassets */,
 				3F223629273ADFC90076352B /* Info.plist */,
 				3F223626273ADFC90076352B /* Preview Content */,
@@ -142,8 +160,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F223632273CA36B0076352B /* LevelSelect.swift in Sources */,
+				3F223634273E12250076352B /* Level_01.swift in Sources */,
 				3F223623273ADFC20076352B /* ContentView.swift in Sources */,
+				3F22363A273E126E0076352B /* Level_04.swift in Sources */,
+				3F223636273E12420076352B /* Level_02.swift in Sources */,
+				3F22363C273E12800076352B /* Level_05.swift in Sources */,
 				3F223621273ADFC20076352B /* Final_ProjectApp.swift in Sources */,
+				3F223638273E12510076352B /* Level_03.swift in Sources */,
+				3F22363E273E128D0076352B /* Level_06.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
