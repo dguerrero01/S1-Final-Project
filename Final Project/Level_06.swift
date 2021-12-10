@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct Level_06: View {
+    @State private var destroy = true
+    @State private var timeLeft = 0.0
+    @State private var gameOver = false
+    @State private var winMessage = ""
+    @State private var moves = Array(repeating: "", count: 16)
     var body: some View {
         NavigationView {
             VStack {
@@ -18,8 +23,21 @@ struct Level_06: View {
                     .padding()
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(120), spacing: -30), count: 4), spacing: 8, content: {
                     ForEach(0..<16) { index in
-                        Color.purple
-                            .frame(width: 80, height: 40)
+                        ZStack {
+                            Color.black
+                            Color.purple
+                                .opacity(moves[index] == "" ? 1 : 0)
+                                .frame(width: 70, height: 40)
+                                .onTapGesture(count: 6) {
+                                    withAnimation(Animation.default) {
+                                        if moves[index] == "" {
+                                            moves[index] = destroy ? " " : " "
+                                            destroy.toggle()
+                                        }
+                                    }
+                                    
+                                }
+                        }
                     }
                 })
                 .padding()
