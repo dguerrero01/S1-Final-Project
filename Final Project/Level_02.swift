@@ -49,7 +49,6 @@ struct Level_02: View {
                 }
                 Spacer()
                     .preferredColorScheme(.dark)
-                NavigationLink("Next Level", destination: Level_03())
             }
         }
     }

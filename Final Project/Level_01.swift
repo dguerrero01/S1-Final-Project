@@ -9,7 +9,6 @@ import SwiftUI
 
 struct Level_01: View {
     @State private var destroy = true
-    @State private var timeLeft = 0.0
     @State private var gameOver = false
     @State private var winMessage = ""
     @State private var moves = Array(repeating: "", count: 16)
@@ -31,7 +30,7 @@ struct Level_01: View {
                                 .onTapGesture {
                                     withAnimation(Animation.default) {
                                         if moves[index] == "" {
-                                            moves[index] = destroy ? " " : " "
+                                            moves[index] = destroy ? "1" : "1"
                                             destroy.toggle()
                                         }
                                     }
@@ -42,16 +41,10 @@ struct Level_01: View {
                 })
                 .padding()
                 HStack {
-                    Text("Score: ")
-                        .padding()
-                    Text("Time Left: ")
-                        .padding()
+                    TimeLeft()
                 }
                 Spacer()
                     .preferredColorScheme(.dark)
-                    .alert(isPresented: $gameOver, content: {
-                        Alert(title: Text(winMessage))
-                    })
             }
         }
     }
@@ -60,5 +53,36 @@ struct Level_01: View {
 struct Level_01_Previews: PreviewProvider {
     static var previews: some View {
         Level_01()
+    }
+}
+
+//Modified from Peter H and Dylan's code
+struct TimeLeft: View {
+    @State private var timeRemaining = 100.0
+    @State private var start = false
+    var body: some View {
+        VStack {
+            Text("Time Left:")
+                .padding()
+            let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+            
+            if start == false {
+                Text("\(timeRemaining, specifier: "%.1f")")
+                    .font(.title)
+            }
+            else {
+                Text("\(timeRemaining, specifier: "%.1f")")
+                    .font(.largeTitle)
+                    .onReceive(timer) { time in if self.timeRemaining > 0 {
+                        self.timeRemaining -= 0.1
+                    }
+                    }
+            }
+            Button("Start/Stop") {
+                start.toggle()
+            }
+            .font(.title)
+        }
+        
     }
 }
