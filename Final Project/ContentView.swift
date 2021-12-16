@@ -23,7 +23,7 @@ struct ContentView: View {
                     }
                 })
                 .padding()
-                NavigationLink("PLAY", destination: LevelSelect())
+                NavigationLink("PLAY", destination: LevelSelect().navigationBarHidden(true))
                     .padding()
                 Spacer()
                     .preferredColorScheme(.dark)

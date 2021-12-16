@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Level_01: View {
+    @State private var start = false
+    @State private var timeRemaining = 30.0
     @State private var destroy = true
     @State private var gameOver = false
     @State private var winMessage = ""
@@ -28,24 +30,85 @@ struct Level_01: View {
                                 .opacity(moves[index] == "" ? 1 : 0)
                                 .frame(width: 70, height: 40)
                                 .onTapGesture {
-                                    withAnimation(Animation.default) {
-                                        if moves[index] == "" {
-                                            moves[index] = destroy ? "1" : "1"
-                                            destroy.toggle()
+                                    if start == true {
+                                        withAnimation(Animation.default) {
+                                            if moves[index] == "" {
+                                                moves[index] = destroy ? " " : " "
+                                                destroy.toggle()
+                                            }
                                         }
                                     }
-                                    
                                 }
                         }
                     }
                 })
                 .padding()
-                HStack {
-                    TimeLeft()
-                }
                 Spacer()
                     .preferredColorScheme(.dark)
+                    .alert(isPresented: $gameOver, content: {
+                        Alert(title: Text(winMessage), dismissButton: .destructive(Text("Dismiss"), action: {
+                            withAnimation(Animation.default) {
+                                moves = Array(repeating: "", count: 16)
+                                gameOver = false
+                                timeRemaining = 30.0
+                            }
+                        }))
+                    })
+                    .onChange(of: moves, perform: { value in
+                        checkForWin()
+                    })
+                
+                //Modified from Peter H and Dylan's code
+                Text("Time Left:")
+                    .padding()
+                let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+                
+                if start == false {
+                    Text("\(timeRemaining, specifier: "%.1f")")
+                }
+                else {
+                    Text("\(timeRemaining, specifier: "%.1f")")
+                        .onReceive(timer) { time in if self.timeRemaining > 0 {
+                            self.timeRemaining -= 0.1
+                        }
+                        }
+                }
+                Spacer()
+                Button("Start") {
+                    start.toggle()
+                }
+                .padding()
+                .font(.title)
+                Spacer()
+                HStack {
+                    NavigationLink("Main Menu", destination: ContentView().navigationBarHidden(true))
+                        .padding()
+                    Button("Restart") {
+                        moves = Array(repeating: "", count: 16)
+                        gameOver = false
+                        start.toggle()
+                        timeRemaining = 30.0
+                    }
+                    .padding()
+                NavigationLink("Next Level", destination: Level_02().navigationBarHidden(true))
+                    .padding()
+                }
             }
+        }
+        
+    }
+    private func checkForWin() {
+        if timeRemaining < 1
+        {
+            winMessage = "Oh oh :("
+            gameOver = true
+            start.toggle()
+        }
+        if !(gameOver || moves.contains(""))
+            {
+            winMessage = "You Win! :D"
+            gameOver = true
+            start.toggle()
         }
     }
 }
@@ -56,33 +119,5 @@ struct Level_01_Previews: PreviewProvider {
     }
 }
 
-//Modified from Peter H and Dylan's code
-struct TimeLeft: View {
-    @State private var timeRemaining = 100.0
-    @State private var start = false
-    var body: some View {
-        VStack {
-            Text("Time Left:")
-                .padding()
-            let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
-            
-            if start == false {
-                Text("\(timeRemaining, specifier: "%.1f")")
-                    .font(.title)
-            }
-            else {
-                Text("\(timeRemaining, specifier: "%.1f")")
-                    .font(.largeTitle)
-                    .onReceive(timer) { time in if self.timeRemaining > 0 {
-                        self.timeRemaining -= 0.1
-                    }
-                    }
-            }
-            Button("Start/Stop") {
-                start.toggle()
-            }
-            .font(.title)
-        }
-        
-    }
-}
+
+
